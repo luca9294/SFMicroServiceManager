@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://db" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://db" xmlns:intf="http://db" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://db" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getTest">
+    <complexType/>
+   </element>
+   <element name="getTestResponse">
+    <complexType>
+     <sequence>
+      <element name="getTestReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createMicroservice">
+    <complexType>
+     <sequence>
+      <element name="port" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createMicroserviceResponse">
+    <complexType>
+     <sequence>
+      <element name="createMicroserviceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteMicroservice">
+    <complexType>
+     <sequence>
+      <element name="container" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteMicroserviceResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteMicroserviceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="deleteMicroserviceRequest">
+
+      <wsdl:part element="impl:deleteMicroservice" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTestRequest">
+
+      <wsdl:part element="impl:getTest" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createMicroserviceResponse">
+
+      <wsdl:part element="impl:createMicroserviceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTestResponse">
+
+      <wsdl:part element="impl:getTestResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createMicroserviceRequest">
+
+      <wsdl:part element="impl:createMicroservice" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteMicroserviceResponse">
+
+      <wsdl:part element="impl:deleteMicroserviceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Controller">
+
+      <wsdl:operation name="getTest">
+
+         <wsdl:input message="impl:getTestRequest" name="getTestRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTestResponse" name="getTestResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createMicroservice">
+
+         <wsdl:input message="impl:createMicroserviceRequest" name="createMicroserviceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createMicroserviceResponse" name="createMicroserviceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteMicroservice">
+
+         <wsdl:input message="impl:deleteMicroserviceRequest" name="deleteMicroserviceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteMicroserviceResponse" name="deleteMicroserviceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ControllerSoapBinding" type="impl:Controller">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getTest">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTestRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTestResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createMicroservice">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createMicroserviceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createMicroserviceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteMicroservice">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteMicroserviceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteMicroserviceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ControllerService">
+
+      <wsdl:port binding="impl:ControllerSoapBinding" name="Controller">
+
+         <wsdlsoap:address location="http://localhost:8080/apples-ecommerce-ws/services/Controller"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
